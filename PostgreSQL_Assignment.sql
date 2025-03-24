@@ -110,3 +110,8 @@ UPDATE books
     SET price =price + (price*0.1)
     WHERE published_year < 2000;
 
+-- Problem 8: Delete customers who haven't placed any orders
+
+DELETE FROM customers
+    WHERE id NOT IN ( SELECT DISTINCT customer_id FROM orders);    
+
