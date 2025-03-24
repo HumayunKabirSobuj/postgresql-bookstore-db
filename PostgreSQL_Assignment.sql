@@ -38,7 +38,7 @@ INSERT INTO books (title, author, price, stock, published_year) VALUES
 ('Database Design Neetimala', 'Nusrat Jahan', 20.00, 0, 2018);
 
 
-SELECT * FROM books
+SELECT * FROM books:
 
 
 -- Insert data into customers table
@@ -50,3 +50,12 @@ INSERT INTO customers (name, email) VALUES
 
 
 SELECT * FROM customers;
+
+-- Insert data into orders table
+
+INSERT INTO orders (customer_id, book_id, quantity) VALUES
+(1, 2, 1),
+(2, 1, 1),
+(1, 3, 2);
+
+SELECT * FROM orders;
