@@ -5,7 +5,7 @@ CREATE TABLE books (
     id SERIAL PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
     author VARCHAR(50) NOT NULL,
-    price FLOAT4 CHECK (price >= 0),
+    price DECIMAL(10,2) CHECK (price >= 0),
     stock INT CHECK (stock >= 0),
     published_year INT
 );
@@ -18,6 +18,8 @@ CREATE TABLE customers (
     joined_date DATE DEFAULT CURRENT_DATE
 );
 
+
+
 -- Create orders table
 CREATE TABLE orders (
     id SERIAL PRIMARY KEY,
@@ -26,7 +28,6 @@ CREATE TABLE orders (
     quantity INT CHECK (quantity > 0),
     order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 )
-
 
 
 -- Insert data into books table
@@ -96,16 +97,16 @@ SELECT customers.name, COUNT(orders.id) as orders_count FROM customers
 
 -- Problem 6: Find the average price of books in the store
 
-SELECT AVG(price) as average_price FROM books;
-
+SELECT ROUND(AVG(price),2) as average_price FROM books;
 
 -- Problem 7: Increase the price of all books published before 2000 by 10%
-
-SELECT * FROM books;
 
 UPDATE books
     SET price =price + (price*0.1)
     WHERE published_year < 2000;
+
+
+SELECT * FROM books;    
 
 -- Problem 8: Delete customers who haven't placed any orders
 
