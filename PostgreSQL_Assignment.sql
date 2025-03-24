@@ -79,11 +79,19 @@ SELECT * FROM books ORDER BY price DESC LIMIT 1;
 
 
 SELECT customers.name, COUNT(orders.id) as total_order FROM customers
-LEFT JOIN orders ON orders.customer_id = customers.id
-GROUP BY customers.id;
+    LEFT JOIN orders ON orders.customer_id = customers.id
+    GROUP BY customers.id;
 
 -- Problem 4: Calculate the total revenue generated from book sales
 
 SELECT SUM(books.price * orders.quantity) as total_revenue FROM orders
     JOIN books ON books.id = orders.book_id;
+
+
+-- Problem 5: List all customers who have placed more than one order
+
+SELECT customers.name, COUNT(orders.id) as orders_count FROM customers
+    LEFT JOIN orders ON orders.customer_id = customers.id
+    GROUP BY customers.id
+    HAVING COUNT(orders.id)>1;
 
