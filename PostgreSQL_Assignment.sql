@@ -95,3 +95,10 @@ SELECT customers.name, COUNT(orders.id) as orders_count FROM customers
     GROUP BY customers.id
     HAVING COUNT(orders.id)>1;
 
+
+
+-- Problem 6: Find the average price of books in the store
+
+SELECT AVG(price) as average_price FROM books;
+
+
