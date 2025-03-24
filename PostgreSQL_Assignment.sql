@@ -102,3 +102,11 @@ SELECT customers.name, COUNT(orders.id) as orders_count FROM customers
 SELECT AVG(price) as average_price FROM books;
 
 
+-- Problem 7: Increase the price of all books published before 2000 by 10%
+
+SELECT * FROM books;
+
+UPDATE books
+    SET price =price + (price*0.1)
+    WHERE published_year < 2000;
+
