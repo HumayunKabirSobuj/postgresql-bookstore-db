@@ -18,3 +18,13 @@ CREATE TABLE customers (
     email VARCHAR(80) UNIQUE NOT NULL,
     joined_date DATE DEFAULT CURRENT_DATE
 );
+
+-- Create orders table
+CREATE TABLE orders (
+    id SERIAL PRIMARY KEY,
+    customer_id INTEGER REFERENCES customers(id) ON DELETE CASCADE,
+    book_id INTEGER REFERENCES books(id) ON DELETE CASCADE,
+    quantity INT CHECK (quantity > 0),
+    order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)
+
