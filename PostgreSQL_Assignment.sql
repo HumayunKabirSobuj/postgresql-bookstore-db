@@ -28,3 +28,25 @@ CREATE TABLE orders (
     order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 )
 
+-- Insert data into books table
+
+INSERT INTO books (title, author, price, stock, published_year) VALUES
+('Projuktir Pothe', 'Rakib Hasan', 40.00, 10, 1999),
+('Coding-er Soundorjo', 'Sadia Akter', 35.00, 5, 2008),
+('JavaScript Shohoj Path', 'Mahmudul Islam', 30.00, 8, 2014),
+('Code Punorgothon', 'Tanvir Ahmed', 50.00, 3, 1999),
+('Database Design Neetimala', 'Nusrat Jahan', 20.00, 0, 2018);
+
+
+SELECT * FROM books
+
+
+-- Insert data into customers table
+
+INSERT INTO customers (name, email) VALUES
+('Rahim', 'rahim@email.com'),
+('Karim', 'karim@email.com'),
+('Sumi Akter', 'sumi@email.com');
+
+
+SELECT * FROM customers;
