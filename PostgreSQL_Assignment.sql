@@ -4,7 +4,7 @@
 CREATE TABLE books (
     id SERIAL PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
-    author VARCHAR(255) NOT NULL,
+    author VARCHAR(50) NOT NULL,
     price FLOAT4 CHECK (price >= 0),
     stock INT CHECK (stock >= 0),
     published_year INT
@@ -28,6 +28,10 @@ CREATE TABLE orders (
     order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 )
 
+drop TABLE orders;
+drop TABLE customers;
+drop TABLE books;
+
 -- Insert data into books table
 
 INSERT INTO books (title, author, price, stock, published_year) VALUES
@@ -38,7 +42,7 @@ INSERT INTO books (title, author, price, stock, published_year) VALUES
 ('Database Design Neetimala', 'Nusrat Jahan', 20.00, 0, 2018);
 
 
-SELECT * FROM books:
+SELECT * FROM books;
 
 
 -- Insert data into customers table
@@ -69,3 +73,5 @@ SELECT * FROM books
 -- Problem 2: Retrieve the most expensive book in the store
 
 SELECT * FROM books ORDER BY price DESC LIMIT 1;
+
+
