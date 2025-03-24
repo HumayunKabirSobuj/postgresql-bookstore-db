@@ -66,4 +66,6 @@ SELECT * FROM orders;
 SELECT * FROM books
     WHERE stock=0;
 
-    
+-- Problem 2: Retrieve the most expensive book in the store
+
+SELECT * FROM books ORDER BY price DESC LIMIT 1;
