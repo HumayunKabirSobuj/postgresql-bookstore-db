@@ -75,3 +75,9 @@ SELECT * FROM books
 SELECT * FROM books ORDER BY price DESC LIMIT 1;
 
 
+-- Problem 3: Find the total number of orders placed by each customer
+
+
+SELECT customers.name, COUNT(orders.id) as total_order FROM customers
+LEFT JOIN orders ON orders.customer_id = customers.id
+GROUP BY customers.id;
