@@ -9,3 +9,12 @@ CREATE TABLE books (
     stock INT CHECK (stock >= 0),
     published_year INT
 );
+
+
+-- Create customers table
+CREATE TABLE customers (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    email VARCHAR(80) UNIQUE NOT NULL,
+    joined_date DATE DEFAULT CURRENT_DATE
+);
