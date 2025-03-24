@@ -28,10 +28,6 @@ CREATE TABLE orders (
     order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 )
 
-drop TABLE orders;
-drop TABLE customers;
-drop TABLE books;
-
 -- Insert data into books table
 
 INSERT INTO books (title, author, price, stock, published_year) VALUES
