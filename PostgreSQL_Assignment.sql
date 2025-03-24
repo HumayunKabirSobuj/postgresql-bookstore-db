@@ -59,3 +59,11 @@ INSERT INTO orders (customer_id, book_id, quantity) VALUES
 (1, 3, 2);
 
 SELECT * FROM orders;
+
+
+-- Problem 1: Find books that are out of stock
+
+SELECT * FROM books
+    WHERE stock=0;
+
+    
