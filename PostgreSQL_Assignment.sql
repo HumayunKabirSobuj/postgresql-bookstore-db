@@ -10,7 +10,6 @@ CREATE TABLE books (
     published_year INT
 );
 
-
 -- Create customers table
 CREATE TABLE customers (
     id SERIAL PRIMARY KEY,
